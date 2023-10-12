@@ -73,7 +73,7 @@ export default function Card({ nombre1, nombre2, nombre3, costo, url, empresa, d
                         {i['nombre 3']}
                     </div>}
                 </div>
-                {i.categoria && <p className="text-gray-700 text-[16px] pb-[10px] font-bold">{i.categoria}</p>}
+                {i.marca && <p className="text-gray-700 text-[16px] pb-[10px] font-bold">{i.marca}</p>}
                 <div className="">
                     <p className="text-gray-700 text-[12px]">{i['descripcion basica']}</p>
                 </div>
