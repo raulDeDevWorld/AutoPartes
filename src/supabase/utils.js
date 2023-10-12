@@ -1,0 +1,188 @@
+import { supabase } from './config'
+
+//--------------------------Authentications----------------------------------
+
+const onAuth = async (setUserProfile,) => {
+
+    console.log('onAuth')
+
+        await supabase.auth.refreshSession()
+
+
+    supabase.auth.onAuthStateChange(async (event, session) => {
+
+        console.log('onAuthStateChange')
+        if (session) {
+            console.log(session)
+
+            const { data, error } = await supabase
+                .from('Clientes')
+                .select()
+                .eq('uuid', session.user.id)
+            console.log(error)
+            console.log(data)
+            if (error && error.code === 'PGRST301') {
+                console.log('error.code')
+                setUserProfile(null)
+                return
+            }
+            data !== null && data !== undefined && data.length
+                ? setUserProfile(data[0])
+                : setUserProfile(session.user)
+            return
+        }
+        setUserProfile(null)
+    })
+}
+
+const signUpWithEmailAndPassword = async (email, password, setUserProfile) => {
+    const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+    })
+    setUserProfile(data.user)
+
+    return data
+}
+
+const signInWithEmailAndPassword = async (email, password, setUserSuccess) => {
+    const result = await supabase.auth.signInWithPassword({
+        email,
+        password,
+    })
+
+    result.data.user == null && setUserSuccess('AccountNonExist')
+}
+
+const signOut = async (email, password) => {
+    const { error } = await supabase.auth.signOut()
+}
+
+
+const passwordResset = async (new_password) => {
+    await supabase.auth.updateUser({ password: new_password })
+}
+
+
+
+const passwordRedirect = async (email) => {
+    const data = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: 'https://tienda.preciojusto.pro/Resset',
+    })
+}
+
+
+//--------------------------CRUD----------------------------------
+
+const writeUserData = async (rute, object, uuid, context, updateContext, setUserSuccess, msg, eq, obj) => {
+console.log('active')
+    const result = await supabase
+        .from(rute)
+        .insert(object)
+    console.log(result)
+    setUserSuccess ? setUserSuccess(msg) : ''
+    result.status == 201 && updateContext ? readUserData(rute, uuid, updateContext, eq, obj) : (setUserSuccess ? setUserSuccess(msg) : '')
+    // console.log(result)
+    return result
+}
+// ('Users', session.user.id, {}, setUserProfile, null, { uuid: session.user.id, rol: undefined })
+
+const getUserData = async (setUserProfile) => {
+    const { data, error } = await supabase
+        .from('Users')
+        .select()
+        .eq('uuid', "420a5562-ad2e-41df-a566-3f74cb90a65e")
+    console.log(data)
+    console.log(error)
+    data !== null && data !== undefined && data.length
+        ? setUserProfile(data[0])
+        : setUserProfile(session.user)
+    return
+}
+
+
+const getSpecificData = async (rute, eq, uuid, updateContext, eq2, uuid2) => {
+    const { data, error } = await supabase
+        .from(rute)
+        .select()
+        .eq(eq, uuid)
+        .eq('message', 'Correcto')
+        .eq(eq2, uuid2)
+
+    // .gt(gt, value)
+    console.log(data)
+    let value = data.length > 0
+        ? data.reduce((acc, i) => {
+            return i.id > acc.id ? i : acc
+        }, { id: -1 })
+        : null
+    updateContext(value)
+    // console.log(data)
+    // console.log(error)
+}
+
+const readUserData = async (rute, uuid, updateContext, eq, object) => {
+    const result = await supabase
+        .from(rute)
+        .select()
+        .eq(eq ? eq : 'uuid', uuid)
+        console.log(result)
+    if (updateContext) {
+        result.data !== null && result.data.length !== 0
+            ? (object ? updateContext(result.data[0]) : updateContext(result.data))
+            : updateContext(null)
+    }
+    // console.log(result)
+    return result.data
+}
+
+const readUserDataEq = async (rute, eq, uuid, updateContext, eq2, value) => {
+    const result = await supabase
+        .from(rute)
+        .select()
+        .eq(eq ? eq : 'uuid', uuid)
+        .eq(eq2, value)
+
+
+    if (updateContext) {
+        result.data !== null && result.data.length !== 0
+            ? (result.data.lenght > 1 ? updateContext(result.data[0]) : updateContext(result.data))
+            : updateContext(null)
+    }
+    // console.log(result)
+    return result.data
+}
+
+const readUserAllData = async (rute, updateContext) => {
+
+    const result = await supabase
+        .from(rute)
+        .select()
+    console.log(result)
+    return updateContext(result.data)
+
+}
+
+const updateUserData = async (rute, object, uuid, eq) => {
+    const result = await supabase
+        .from(rute)
+        .update(object)
+        .eq(eq ? eq : 'uuid', uuid)
+
+    console.log(result)
+}
+
+
+const deleteUserData = async (rute, uuid, eq) => {
+    const { error } = await supabase
+        .from(rute)
+        .delete()
+        .eq(eq ? eq : 'uuid', uuid)
+
+
+}
+
+export { onAuth, signUpWithEmailAndPassword, signInWithEmailAndPassword, signOut, passwordResset, passwordRedirect, writeUserData, readUserData, deleteUserData, updateUserData, readUserAllData, getUserData, getSpecificData, readUserDataEq }
+
+
+
