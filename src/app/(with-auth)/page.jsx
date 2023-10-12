@@ -199,7 +199,7 @@ function Home() {
 
 
                 <div className='relative  flex flex-col items-center w-full max-w-screen bg-red-500 h-[80vh] overflow-y-scroll    w-full bg-transparent  transition-all px-[15px]	z-0 hidden md:flex' >
-                    <div className='w-full grid grid-cols-2 gap-[10px] md:col-span-2'>
+                    {/* <div className='w-full grid grid-cols-2 gap-[10px] md:col-span-2'>
 
                         <ul class="flex border-b">
                             <li class={`mr-1  ${mode === 'Services' ? '-mb-px' : ''}`} onClick={() => setMode('Services')}>
@@ -212,16 +212,11 @@ function Home() {
                         </ul>
 
 
-                        {/* <Button theme={mode === 'Services' ? 'Primary' : 'Disable'} click={() => setMode('Services')}>Servicios</Button>
-                        <Button theme={mode === 'Client' ? 'Primary' : 'Disable'} click={() => setMode('Client')}>Cliente</Button> */}
-                    </div>
+                       
+                    </div> */}
 
-                    {mode === 'Client' &&
-                        <div className='grid grid-cols-2 gap-[5px] md:col-span-2'>
-                            <input type="text" className='border-b border-gray-300 gap-4 text-center focus:outline-none  w-[300px]' onChange={onChangeHandler} placeholder='Autocompletar por CI' />
-                            <Button theme="Primary" click={() => ''}>Buscar</Button>
-                        </div>}
-                    {mode === 'Client' && <form className={`w-full max-w-[450px] md:max-w-[600px]  mt-[15px] space-y-4 shadow-2xl bg-white shadow rounded-[20px] px-5 py-10 md:grid md:grid-cols-2 md:gap-[5px]`} onSubmit={handlerSubmit} >
+                  
+                    {/* {mode === 'Client' && <form className={`w-full max-w-[450px] md:max-w-[600px]  mt-[15px] space-y-4 shadow-2xl bg-white shadow rounded-[20px] px-5 py-10 md:grid md:grid-cols-2 md:gap-[5px]`} onSubmit={handlerSubmit} >
 
                         <h5 className="text-[18px] text-center text-gray-800 md:col-span-2" >Datos de usuario</h5>
 
@@ -242,7 +237,7 @@ function Home() {
                             <Input type="text" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-[16px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-gray-800" reference={inputRefWhatsApp} placeholder="" required />
                         </div>
                         <Button type="submit" theme="Primary" styled={"md:col-span-2"}>Registrar</Button>
-                    </form>}
+                    </form>} */}
                     {/* {success == 'AccountNonExist' && <Msg>Cuenta inexistente</Msg>}
                         {success == 'CompleteEmail' && <Msg>Introduce tu email</Msg>}
 
@@ -258,7 +253,7 @@ function Home() {
                         {Object.values(cart).length > 0 && <thead className="w-full text-[16px] text-gray-900 uppercase border-b bg-gray-100">
                             <tr>
                                 <th scope="col-3" className="px-2 py-3 font-bold">
-                                    Prenda
+                                    Producto
                                 </th>
                                 <th scope="col" className="px-0 py-3  w-[100px] text-center font-bold">
                                     Cantidad
@@ -287,6 +282,8 @@ function Home() {
                         </tbody>}
 
                     </table>}
+                    <Button type="submit" theme="Primary" styled={"md:col-span-2"}>Finalizar venta</Button>
+
                 </div>
 
 
