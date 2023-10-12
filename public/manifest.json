@@ -1,6 +1,6 @@
 {
-    "name": "Lava Velox",
-    "short_name": "Lava Velox",
+    "name": "Autopartes mary",
+    "short_name": "Autopartes mary",
     "icons": [
  
       {
@@ -14,8 +14,8 @@
         "type": "image/png"
       }
     ],
-    "theme_color": "#00095F",
-    "background_color": "#00095F",
+    "theme_color": "#DC0000",
+    "background_color": "#DC0000",
     "start_url": "/",
     "display": "standalone",
     "orientation": "portrait"

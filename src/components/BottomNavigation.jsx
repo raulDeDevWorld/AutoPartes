@@ -62,7 +62,7 @@ export default function BottomNavigation({ rol }) {
 
 
     const redirectHandlerWindow = () => {
-        window.open(`https://api.whatsapp.com/send?phone=${businessData[0].whatsapp.replaceAll(' ', '')}&text=hola%20necesito%20un%20implante%20de%20osteosintesis%20¿Pueden%20ayudarme?%20`, '_blank')
+        window.open(`https://api.whatsapp.com/send?phone=+59169941749&text=hola%20¿Pueden%20ayudarme?%20`, '_blank')
         setNav(false)
         // setWhatsapp(!whatsapp)
     }
@@ -295,13 +295,13 @@ export default function BottomNavigation({ rol }) {
                 <Products />
                    </Button>
 
-                <Button click={() => redirectHandler(`Administrador/Plantilla/Agregar`)} name={'Agregar'}>
+                <Button click={() => redirectHandler(`Productos/Agregar`)} name={'Agregar'}>
                     <svg className="w-11 h-11 mb-1 text-white rounded-full  p-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path clipRule="evenodd" fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"></path>
                     </svg>
                 </Button>
 
-                <Button click={() => redirectHandler(`Administrador/Plantilla`)} name={'Plantilla'}>
+                <Button click={redirectHandlerWindow} name={'Plantilla'}>
                 <Support />
                 </Button>
             </div>

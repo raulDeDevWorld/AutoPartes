@@ -12,10 +12,10 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/logo.png" />
         <link rel='manifest' href='/manifest.json' />
         <link rel='apple-touch-icon' href='/logo.png' /> 
-        <meta name="theme-color" content="#000000" />
-        <meta name="msapplication-navbutton-color" content="#000000" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="#000000" />
-        <meta name="description" content="Sistema de Administracion LAVA VELOX" />
+        <meta name="theme-color" content="#DC0000" />
+        <meta name="msapplication-navbutton-color" content="#DC0000" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#DC0000" />
+        <meta name="description" content="Sistema de Administracion MARY" />
         <meta name="keywords" content="Velox" />
         <meta name="author" content="Velox" />
         <title>Autopartes Mary</title>

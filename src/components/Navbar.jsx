@@ -21,7 +21,7 @@ export default function BottomNavigation({ rol }) {
     }
 
     const redirectHandlerWindow = () => {
-        window.open(`https://api.whatsapp.com/send?phone=${businessData[0].whatsapp.replaceAll(' ', '')}&text=hola%20necesito%20un%20implante%20de%20osteosintesis%20¿Pueden%20ayudarme?%20`, '_blank')
+        window.open(`https://api.whatsapp.com/send?phone=+59169941749&text=hola%20¿Pueden%20ayudarme?%20`, '_blank')
         setNav(false)
         // setWhatsapp(!whatsapp)
     }
@@ -55,7 +55,7 @@ export default function BottomNavigation({ rol }) {
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clipPath="url(#clip0_522_477)">
                         <mask id="mask0_522_477" style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                            <path d="M24 0H0V24H24V0Z" fill="white" />
+                            <path d="M24 0H0V24H24V0Z" fill="#000000" />
                         </mask>
                         <g mask="url(#mask0_522_477)">
                             <path d="M0 7.512L3 0H21L24 7.512C24 8.344 23.704 9.048 23.112 9.624C22.52 10.2 21.816 10.496 21 10.512C20.184 10.528 19.48 10.232 18.888 9.624C18.296 9.016 18 8.312 18 7.512C18 8.344 17.704 9.048 17.112 9.624C16.52 10.2 15.816 10.496 15 10.512C14.184 10.528 13.48 10.232 12.888 9.624C12.296 9.016 12 8.312 12 7.512C12 8.344 11.704 9.048 11.112 9.624C10.52 10.2 9.816 10.496 9 10.512C8.184 10.528 7.48 10.232 6.888 9.624C6.296 9.016 6 8.312 6 7.512C6 8.344 5.704 9.048 5.112 9.624C4.52 10.2 3.816 10.496 3 10.512C2.184 10.528 1.48 10.232 0.888 9.624C0.296 9.016 0 8.312 0 7.512ZM1.512 22.512H22.512V24H1.512V22.512ZM3 21V12C4.136 12 5.136 11.616 6 10.848V18H18V10.848C18.864 11.616 19.864 12 21 12V21H3Z" fill="white" />

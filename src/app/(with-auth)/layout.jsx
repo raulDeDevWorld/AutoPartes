@@ -190,7 +190,7 @@ function Home({ children }) {
 
               {/* <div className="fixed  bottom-[-200px] right-[-200px] h-[400px] w-[400px] rounded-full bg-[#00E2FF]"></div> */}
             </div>
-            {user && user !== undefined && <div className="fixed bottom-0  z-30 w-full h-[65px] bg-[#00E2FF] rounded-t-[40px] border-t-[1px] border-gray-50 border- lg:hidden">
+            {user && user !== undefined && <div className="fixed bottom-0  z-30 w-full h-[65px] bg-[#DC0000] rounded-t-[40px] border-t-[1px] border-gray-50 border- lg:hidden">
               <BottomNavigation rol={user.rol} />
             </div>}
 
