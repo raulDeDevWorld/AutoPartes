@@ -11,7 +11,7 @@ import LoaderBlack from '@/components/LoaderBlack'
 import Button from '@/components/Button'
 import { useMask } from '@react-input/mask';
 import { useRouter } from 'next/navigation';
-import { WithAuth } from '@/HOCs/WithAuth'
+
 
 
 function Home() {

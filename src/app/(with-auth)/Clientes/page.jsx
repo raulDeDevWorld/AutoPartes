@@ -7,7 +7,7 @@ import Select from '@/components/Select'
 import { useUser } from '@/context/'
 import Tag from '@/components/Tag'
 import { useRouter } from 'next/navigation';
-import { WithAuth } from '@/HOCs/WithAuth'
+
 import { useEffect, useState } from 'react'
 import { writeUserData, readUserData, updateUserData, deleteUserData, readUserAllData } from '@/supabase/utils'
 // import { uploadStorage } from '@/supabase/storage'
@@ -144,7 +144,7 @@ function Home() {
 }
 
 
-export default WithAuth(Home)
+export default Home
 
 
 

@@ -13,7 +13,7 @@ import Msg from '@/components/Msg'
 import Modal from '@/components/Modal'
 // import QRscanner from '@/components/QRscanner'
 import { useRouter } from 'next/navigation';
-import { WithAuth } from '@/HOCs/WithAuth'
+
 import { useEffect } from 'react'
 // import QrcodeDecoder from 'qrcode-decoder';
 import { QRreaderUtils } from '@/utils/QRreader'

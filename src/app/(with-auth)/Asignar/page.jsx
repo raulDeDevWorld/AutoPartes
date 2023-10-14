@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Button from '@/components/Button';
 import { useUser } from '@/context'
 import Title from '@/components/Title'
-import { WithAuth } from '@/HOCs/WithAuth'
+
 import { writeUserData, readUserData, updateUserData } from '@/supabase/utils'
 import { uploadStorage } from '@/supabase/storage'
 import Page from '@/components/Page'

@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 import { signOut } from '@/supabase/utils'
 import { useRouter } from 'next/navigation';
 import Cart from '@/components/Cart'
-import { WithAuth } from '@/HOCs/WithAuth'
+
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import BottomNavigation from '@/components/BottomNavigation'

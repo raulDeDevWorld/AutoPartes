@@ -15,7 +15,7 @@ import Modal from '@/components/Modal'
 import Button from '@/components/Button'
 import { useMask } from '@react-input/mask';
 import { useRouter } from 'next/navigation';
-import { WithAuth } from '@/HOCs/WithAuth'
+
 // import { generateUUID } from '@/utils/UIDgenerator'
 // import { disponibilidad } from '@/constants'
 
