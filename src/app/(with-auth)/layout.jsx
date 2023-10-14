@@ -75,10 +75,11 @@ function Home({ children }) {
   useEffect(() => {
     if (user === undefined) onAuth(setUserProfile)
     businessData === undefined && readUserData('Perfil','QR', setBusinessData, null, true)
-    user !== undefined && user !== null && readUserAllData('Servicios', setServicios)
+    servicios === undefined && readUserAllData('Servicios', setServicios)
   }, [user, userDB, businessData, servicios])
 
-
+console.log(servicios)
+console.log(businessData)
 
   return (
     <div >
@@ -115,7 +116,7 @@ function Home({ children }) {
           </Modal>}
           <div className={`fixed top-0 w-[220px] lg:w-[280px] shadow-xl  h-screen bg-white h-screen transition-all	z-40  ${nav ? 'left-0  ' : 'left-[-220px] lg:left-[-280px] '} z-50`} >
             <div className="py-0 overflow-y-auto ">
-              {user && user !== undefined && <Navbar rol={user.rol} />}
+              <Navbar rol={user && user !== undefined ? user.rol : 'User'} />
             </div>
           </div>
 
@@ -154,8 +155,7 @@ function Home({ children }) {
                 </div>
                 <input type="text" id="search-navbar" onChange={handlerFilter} className="block w-full bg-white rounded-full lg:min-w-[400px] p-2 pl-10 text-[14px] text-gray-950 text-center border-b border-gray-300  bg-transparent focus:ring-white focus:border-white focus:outline-transparent" defaultValue={filter} placeholder="Buscar producto..." />
               </div>}
-
-              {user && user !== undefined && user.rol !== 'Distribuidor' && pathname === '/' && <Cart />}
+ <Cart />
             </nav>
 
             {search

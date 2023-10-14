@@ -20,16 +20,9 @@ export default function Card({ nombre1, nombre2, nombre3, costo, url, empresa, d
         e.stopPropagation()
 
 
-        if (user.rol == 'Clinica' && userDB && userDB.autorizacion == false) {
-            setModal('Auth')
-            return
-        }
-        if (user && user.rol !== 'Cliente' && (userDB == null || userDB == undefined)) {
-            setModal('Verifica')
-        } else {
-            setUserCart({ ...cart, [i.uuid]: { ...i, cantidad: detalle !== undefined ? detalle.cantidad : 1 } })
-            setFilterDis(i.distribuidor)
-        }
+        setUserCart({ ...cart, [i.uuid]: { ...i, cantidad: detalle !== undefined ? detalle.cantidad : 1 } })
+        setFilterDis(i.distribuidor)
+
 
 
 

@@ -70,7 +70,7 @@ function Home() {
         console.log('submit')
         const res = await writeUserData('Servicios', { ...state, uuid })
         console.log(res)
-        res.error === null && await uploadStorage('Servicios', postImage, uuid, updateUserData)
+        res.error === null && await uploadStorage('Servicios', postImage, 'qr_image', updateUserData, true)
         return handlerReset()
     }
 

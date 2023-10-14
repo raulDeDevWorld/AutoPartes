@@ -139,6 +139,7 @@ export default function BottomNavigation({ rol }) {
 
 
     switch (rol) {
+
         case 'Administrador':
             return <ul className="space-y-3 text-[16px]  text-gray-600 font-medium">
                 <Header />
@@ -160,6 +161,14 @@ export default function BottomNavigation({ rol }) {
                 <Support />
                 <SignOut />
             </ul>
+            case 'User':
+                return <ul className="space-y-3 text-[16px]  text-gray-600 font-medium">
+                    <Header />
+                    <Store />
+                    <Support />
+                    <Policy />
+                    <SignOut />
+                </ul>
         default:
     }
 }
