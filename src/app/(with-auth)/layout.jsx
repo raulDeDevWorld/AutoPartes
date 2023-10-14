@@ -87,7 +87,7 @@ function Home({ children }) {
 
     <div >
 
-      {user && user.rol !== undefined && businessData !== undefined 
+      {servicios !== undefined && businessData !== undefined 
 
         ? <div className="h-screen bg-gray-white">
 
