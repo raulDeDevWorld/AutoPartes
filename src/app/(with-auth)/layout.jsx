@@ -74,10 +74,7 @@ function Home({ children }) {
 
   useEffect(() => {
     if (user === undefined) onAuth(setUserProfile)
-    if (user === null) router.push('/Login')
-    if (user && user.role === 'authenticated') { router.push('/Register') }
     businessData === undefined && readUserData('Perfil','QR', setBusinessData, null, true)
-
     user !== undefined && user !== null && readUserAllData('Servicios', setServicios)
   }, [user, userDB, businessData])
 
