@@ -137,9 +137,7 @@ function Home({ children }) {
                   </button>
                   <h1 className='text-[18px] hidden lg:flex lg:justify-between ml-5 lg:w-[240px] lg:items-center text-white font-medium'> AUTOPARTES MARY  </h1>
                 </div>
-              </div>
-
-              }
+              </div>}
               {pathname === '/' ?
                 <div className='flex '>
                   <button type="button" className="inline-flex items-center bg-white p-[2px] text-[14px] text-white rounded-lg  " onClick={openNav}>
@@ -187,7 +185,6 @@ function Home({ children }) {
             <div className="lg:px-[50px] pt-[85px] pb-[65px] md:pt-[85px] md:pb-5 h-screen w-full overflow-y-auto">
               {children}
 
-              {/* <div className="fixed  bottom-[-200px] right-[-200px] h-[400px] w-[400px] rounded-full bg-[#00E2FF]"></div> */}
             </div>
             {user && user !== undefined && <div className="fixed bottom-0  z-30 w-full h-[65px] bg-[#DC0000] rounded-t-[40px] border-t-[1px] border-gray-50 border- lg:hidden">
               <BottomNavigation rol={user.rol} />
