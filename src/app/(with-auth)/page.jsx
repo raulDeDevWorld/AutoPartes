@@ -199,7 +199,7 @@ function Home() {
 
 
                 <div className='relative  flex flex-col items-center w-full max-w-screen bg-red-500 h-[80vh] overflow-y-scroll    w-full bg-transparent  transition-all px-[15px]	z-0 hidden md:flex' >
-                    {/* <div className='w-full grid grid-cols-2 gap-[10px] md:col-span-2'>
+                    <div className='w-full grid grid-cols-2 gap-[10px] md:col-span-2'>
 
                         <ul class="flex border-b">
                             <li class={`mr-1  ${mode === 'Services' ? '-mb-px' : ''}`} onClick={() => setMode('Services')}>
@@ -208,15 +208,14 @@ function Home() {
                             <li class={`mr-1 ${mode === 'Client' ? '-mb-px' : ''}`} onClick={() => setMode('Client')}>
                                 <span class={`bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold cursor-pointer ${mode === 'Client' ? 'border-l border-t border-r  rounded-t' : ''}`} >Cliente</span>
                             </li>
-
+                            <li class={`mr-1 ${mode === 'Client' ? '-mb-px' : ''}`} onClick={() => setMode('QR de pago')}>
+                                <span class={`bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold cursor-pointer ${mode === 'QR de pago' ? 'border-l border-t border-r  rounded-t' : ''}`} >QR de pago</span>
+                            </li>
                         </ul>
-
-
-                       
-                    </div> */}
+                    </div>
 
                   
-                    {/* {mode === 'Client' && <form className={`w-full max-w-[450px] md:max-w-[600px]  mt-[15px] space-y-4 shadow-2xl bg-white shadow rounded-[20px] px-5 py-10 md:grid md:grid-cols-2 md:gap-[5px]`} onSubmit={handlerSubmit} >
+                    {mode === 'Client' && <form className={`w-full max-w-[450px] md:max-w-[600px]  mt-[15px] space-y-4 shadow-2xl bg-white shadow rounded-[20px] px-5 py-10 md:grid md:grid-cols-2 md:gap-[5px]`} onSubmit={handlerSubmit} >
 
                         <h5 className="text-[18px] text-center text-gray-800 md:col-span-2" >Datos de usuario</h5>
 
@@ -237,7 +236,7 @@ function Home() {
                             <Input type="text" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-[16px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-gray-800" reference={inputRefWhatsApp} placeholder="" required />
                         </div>
                         <Button type="submit" theme="Primary" styled={"md:col-span-2"}>Registrar</Button>
-                    </form>} */}
+                    </form>}
                     {/* {success == 'AccountNonExist' && <Msg>Cuenta inexistente</Msg>}
                         {success == 'CompleteEmail' && <Msg>Introduce tu email</Msg>}
 

@@ -6,7 +6,7 @@ const onAuth = async (setUserProfile,) => {
 
     console.log('onAuth')
 
-        await supabase.auth.refreshSession()
+    await supabase.auth.refreshSession()
 
 
     supabase.auth.onAuthStateChange(async (event, session) => {
@@ -75,7 +75,7 @@ const passwordRedirect = async (email) => {
 //--------------------------CRUD----------------------------------
 
 const writeUserData = async (rute, object, uuid, context, updateContext, setUserSuccess, msg, eq, obj) => {
-console.log('active')
+    console.log('active')
     const result = await supabase
         .from(rute)
         .insert(object)
@@ -126,7 +126,7 @@ const readUserData = async (rute, uuid, updateContext, eq, object) => {
         .from(rute)
         .select()
         .eq(eq ? eq : 'uuid', uuid)
-        console.log(result)
+    console.log(result)
     if (updateContext) {
         result.data !== null && result.data.length !== 0
             ? (object ? updateContext(result.data[0]) : updateContext(result.data))
@@ -164,12 +164,13 @@ const readUserAllData = async (rute, updateContext) => {
 }
 
 const updateUserData = async (rute, object, uuid, eq) => {
+    console.log('eje')
     const result = await supabase
         .from(rute)
         .update(object)
         .eq(eq ? eq : 'uuid', uuid)
-
     console.log(result)
+    return result
 }
 
 
@@ -178,8 +179,6 @@ const deleteUserData = async (rute, uuid, eq) => {
         .from(rute)
         .delete()
         .eq(eq ? eq : 'uuid', uuid)
-
-
 }
 
 export { onAuth, signUpWithEmailAndPassword, signInWithEmailAndPassword, signOut, passwordResset, passwordRedirect, writeUserData, readUserData, deleteUserData, updateUserData, readUserAllData, getUserData, getSpecificData, readUserDataEq }
