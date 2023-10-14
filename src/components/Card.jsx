@@ -58,7 +58,7 @@ export default function Card({ nombre1, nombre2, nombre3, costo, url, empresa, d
 
     console.log(detalle)
     return (
-        <div className="relative w-full max-w-[500px] bg-white rounded-[20px] rounded-bl-[10px] shadow-2xl shadow mt-5" onClick={(e) => seeMore(e, i)} style={{ display: 'grid', gridTemplateColumns: 'auto 150px', gridAutoFlow: 'dense' }}>
+        <div className="relative w-full max-w-[500px] bg-white rounded-[20px] rounded-bl-[10px] shadow-2xl shadow mt-5" style={{ display: 'grid', gridTemplateColumns: 'auto 150px', gridAutoFlow: 'dense' }}>
 
 
             <div className=" p-4 pt-4  flex flex-col justify-start leading-normal">
