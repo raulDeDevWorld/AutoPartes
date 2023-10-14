@@ -78,6 +78,7 @@ function Home() {
 
     return (
         <div className='min-h-full p-5 pb-[30px] lg:pb-5'>
+                {disable && <LoaderBlack></LoaderBlack>}
 
             <form className='p-10 min-w-screen  lg:min-w-auto bg-white shadow-2xl min-h-[80vh]' onSubmit={save}>
                 <h3 className='text-center text-[16px] pb-3'>Agregar Producto</h3>
