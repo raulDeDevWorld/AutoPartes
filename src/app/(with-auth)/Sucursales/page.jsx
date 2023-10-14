@@ -138,7 +138,7 @@ function Home() {
 }
 
 
-export default WithAuth(Home)
+export default Home
 
 
 

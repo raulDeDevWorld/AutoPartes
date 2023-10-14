@@ -185,4 +185,4 @@ function Comprar({ theme, styled, click, children }) {
   </div>)
 }
 
-export default WithAuth(Comprar)
+export default Comprar
