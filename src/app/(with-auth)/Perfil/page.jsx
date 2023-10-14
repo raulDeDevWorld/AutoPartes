@@ -50,7 +50,7 @@ function Home() {
 
         const res = await updateUserData('Perfil', data, 'QR')
         console.log(res.status.toString().includes('2'))
-        res.status.toString().includes('2') && postImage && await uploadStorage('Perfil', postImage, 'QR', updateUserData)
+        res.status.toString().includes('2') && postImage && await uploadStorage('Perfil', postImage, 'QR', updateUserData, true)
         setDisable(false)
     }
 
