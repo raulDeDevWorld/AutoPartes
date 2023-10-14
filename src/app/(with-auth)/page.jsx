@@ -262,9 +262,7 @@ function Home() {
                                 </th>
                             </tr>
                         </thead>}
-
                         {Object.values(cart).length > 0 ? Object.values(cart).map((i, index) => <MiniCard i={i} />) : <span className='block text-[16px] text-center'>No tienes productos <br /> selecciona alguno <br /> </span>}
-
                         {Object.values(cart).length > 0 && <tbody>
                             <tr className="bg-white text-[12px] border-b">
                                 <td className="px-2 py-4 text-[16px] text-gray-900">
@@ -279,7 +277,6 @@ function Home() {
                                 </td>
                             </tr>
                         </tbody>}
-
                     </table>}
                     <Button type="submit" theme="Primary" styled={"md:col-span-2"}>Finalizar venta</Button>
 

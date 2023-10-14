@@ -76,19 +76,14 @@ function Home({ children }) {
     if (user === undefined) onAuth(setUserProfile)
     businessData === undefined && readUserData('Perfil','QR', setBusinessData, null, true)
     user !== undefined && user !== null && readUserAllData('Servicios', setServicios)
-  }, [user, userDB, businessData])
+  }, [user, userDB, businessData, servicios])
 
 
 
   return (
-
     <div >
-
       {servicios !== undefined && businessData !== undefined 
-
         ? <div className="h-screen bg-gray-white">
-
-
           {(user && user.bloqueado === true) || (userDB && userDB.bloqueado === true) ? <Modal funcion={soporte} close={true} cancel={signOutConfirm} cancelText="Cerrar sesión" successText="Contactar">
             Esta cuenta esta bloqueada, <br />por favor comuniquese con soporte.
             <br />
@@ -184,12 +179,10 @@ function Home({ children }) {
 
             <div className="lg:px-[50px] pt-[85px] pb-[65px] md:pt-[85px] md:pb-5 h-screen w-full overflow-y-auto">
               {children}
-
             </div>
             {user && user !== undefined && <div className="fixed bottom-0  z-30 w-full h-[65px] bg-[#DC0000] rounded-t-[40px] border-t-[1px] border-gray-50 border- lg:hidden">
               <BottomNavigation rol={user.rol} />
             </div>}
-
           </main>
         </div>
 
