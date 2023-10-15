@@ -27,32 +27,36 @@ const uploadPDF = async (rute, file, fileName, updateUserData) => {
 const uploadStorage = async (rute, file, fileName, updateUserData, update) => {
     const options = {
         maxWidthOrHeight: 500,
-        maxSizeMB: 0.07,
+        maxSizeMB: 1,
         alwaysKeepResolution: true,
         useWebWorker: true,
-        maxIteration: 300,
+        maxIteration: 200,
         fileType: 'image/webp'
     }
     const compressedFile = file.type != 'image/gif' ? await imageCompression(file, options) : file
 
     const imagesRef = `${fileName}.webp`
 
-    update === true
-        ? await supabase
+    if (update === true) {
+        const res = await supabase
             .storage
             .from(rute)
             .update(imagesRef, compressedFile, {
                 cacheControl: '0',
                 upsert: false
             })
-
-        : await supabase
+        console.log(res)
+    } else {
+        const res = await supabase
             .storage
             .from(rute)
             .upload(imagesRef, compressedFile, {
                 cacheControl: '0',
                 upsert: false
             })
+        console.log(res)
+    }
+
 
     const { data } = await supabase
         .storage

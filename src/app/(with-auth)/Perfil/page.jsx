@@ -38,6 +38,7 @@ function Home() {
 
     async function save(e) {
         e.preventDefault()
+        
         setDisable(true)
 
 
@@ -48,9 +49,10 @@ function Home() {
         }        
         console.log(data)
 
-        const res = await updateUserData('Perfil', data, 'QR')
+        const res = await updateUserData('Perfil', data, 'QR', null)
+        console.log(res)
         console.log(res.status.toString().includes('2'))
-        res.status.toString().includes('2') && postImage && await uploadStorage('Perfil', postImage, 'QR', updateUserData, true)
+        res.status.toString().includes('2') && postImage && await uploadStorage('QR', postImage, 'qr_image', updateUserData, true)
         setDisable(false)
     }
 
