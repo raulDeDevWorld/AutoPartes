@@ -47,12 +47,11 @@ function Home() {
             whatsapp: e.target[1].value,
 
         }        
-        console.log(data)
+        console.log(data.whatsapp !== businessData.whatsapp)
 
-        const res = await updateUserData('Perfil', data, 'QR', null)
+        const res = data.whatsapp !== businessData.whatsapp && await updateUserData('Perfil', data, 'QR', null)
         console.log(res)
-        console.log(res.status.toString().includes('2'))
-        res.status.toString().includes('2') && postImage && await uploadStorage('QR', postImage, 'qr_image', updateUserData, true)
+        postImage && await uploadStorage('QR', postImage, 'qr_image', updateUserData, true)
         setDisable(false)
     }
 
