@@ -74,7 +74,7 @@ function Home({ children }) {
 
   useEffect(() => {
     if (user === undefined) onAuth(setUserProfile)
-    businessData === undefined && readUserData('Perfil','QR', setBusinessData, null, true)
+    businessData === undefined && readUserData('Perfil','qr_image', setBusinessData, null, true)
     servicios === undefined && readUserAllData('Servicios', setServicios)
   }, [user, userDB, businessData, servicios])
 

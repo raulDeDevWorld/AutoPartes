@@ -24,11 +24,6 @@ function Home() {
     const [urlPostImage, setUrlPostImage] = useState(null)
     const [disable, setDisable] = useState(false)
 
-
-    const inputRefCard = useMask({ mask: '____ ____ ____ ____', replacement: { _: /\d/ } });
-    const inputRefDate = useMask({ mask: '__/__', replacement: { _: /\d/ } });
-    const inputRefCVC = useMask({ mask: '___', replacement: { _: /\d/ } });
-    const inputRefPhone = useMask({ mask: '+ 591 _ ___ ___', replacement: { _: /\d/ } });
     const inputRefWhatsApp = useMask({ mask: '+ 591 __ ___ ___', replacement: { _: /\d/ } });
 
 
@@ -49,7 +44,7 @@ function Home() {
         }        
         console.log(data.whatsapp !== businessData.whatsapp)
 
-        const res = data.whatsapp !== businessData.whatsapp && await updateUserData('Perfil', data, 'QR', null)
+        const res = data.whatsapp !== businessData.whatsapp && await updateUserData('Perfil', data, 'qr_image', null)
         console.log(res)
         postImage && await uploadStorage('QR', postImage, 'qr_image', updateUserData, true)
         setDisable(false)

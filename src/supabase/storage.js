@@ -36,7 +36,7 @@ const uploadStorage = async (rute, file, fileName, updateUserData, update) => {
     const compressedFile = file.type != 'image/gif' ? await imageCompression(file, options) : file
 
     const imagesRef = `${fileName}.webp`
-
+    console.log(imagesRef)
     if (update === true) {
         const res = await supabase
             .storage
@@ -58,14 +58,14 @@ const uploadStorage = async (rute, file, fileName, updateUserData, update) => {
     }
 
 
-    const { data } = await supabase
+    const res = await supabase
         .storage
         .from(rute)
         .getPublicUrl(imagesRef)
 
-    console.log(data)
+    console.log(res)
 
-    return updateUserData(rute, { url: data.publicUrl }, fileName)
+    return updateUserData(rute, { url: res.data.publicUrl }, fileName)
 }
 
 export { uploadStorage, uploadPDF }
