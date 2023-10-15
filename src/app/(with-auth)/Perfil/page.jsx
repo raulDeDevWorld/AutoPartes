@@ -40,7 +40,6 @@ function Home() {
 
         const data = {
             whatsapp: e.target[1].value,
-
         }        
         console.log(data.whatsapp !== businessData.whatsapp)
 
@@ -58,7 +57,7 @@ function Home() {
     }
 console.log(businessData)
     return (
-        <div className='w-full flex justify-center p-5'>
+        {user && <div className='w-full flex justify-center p-5'>
 
             <form className='p-5 py-10 bg-white w-full max-w-[800px] shadow-2xl' onSubmit={save} >
                 {success === "Cargando" && <LoaderBlack></LoaderBlack>}
@@ -94,7 +93,7 @@ console.log(businessData)
                     <Button theme='Primary'>Guardar</Button>
                 </div>
             </form>
-        </div>
+        </div>}
     )
 }
 
